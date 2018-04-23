@@ -221,8 +221,8 @@ public class UpdateRunnable implements Runnable {
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .referrer("http://www.google.com")
                     .get()
-                    .select("div[itemprop=softwareVersion]")
-                    .first()
+                    .select("span.htlgb")
+                    .get(3)
                     .ownText();
             return newer_version_available(current_version, new_version);
         } catch (Exception e) {
